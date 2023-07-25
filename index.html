@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="https://httpbin.org/get" method="get">
+      <fieldset>
+        <legend>Personal Info</legend>
+        <p>
+          <label for="firstname">First Name:</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="Enter your First Name"
+            autocomplete="on"
+            required
+            autofocus
+          />
+        </p>
+        <p>
+          <label for="lastname">Last Name:</label>
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="Enter your Last Name"
+            autocomplete="on"
+            required
+          />
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </p>
+        <p>
+          <label for="phone">Mobile Number:</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="Enter your number"
+            required
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+          />
+        </p>
+        <p>
+          <label for="decade">Favourite Decade:</label>
+          <input
+            type="number"
+            name="decade"
+            id="decade"
+            min="1950"
+            max="2020"
+            step="10"
+            vaue="1980"
+          />
+        </p>
+        <p>
+          <label for="coffee">Favourite Coffe:</label>
+          <select name="coffee" id="coffee" multiple value="4">
+            <option value="options">Please select an option</option>
+            <option value="regular coffee">Regular Coffee</option>
+            <option value="iced coffee" selected>Iced Coffee</option>
+            <option value="latte">Latte</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="cordato">Cortado</option>
+            <option value="americano">Americano</option>
+            <option value="others">Others</option>
+          </select>
+        </p>
+        <!-- multiple attribute is used to select multiple values from the list and value shows how many will be visible at once. -->
+        <p>
+          <label for="team">Favourite Team:</label>
+          <select name="team" id="team">
+            <optgroup label="North American Teams">
+              <option value="brazil">Brazil</option>
+              <option value="argentina" selected>Argentina</option>
+            </optgroup>
+            <optgroup label="European Teams">
+              <option value="england">England</option>
+              <option value="france">France</option>
+            </optgroup>
+            <option value="others">Others</option>
+          </select>
+        </p>
+        <!-- datalist -->
+        <p>
+          <label for="animals">Fav Animals</label>
+          <input type="text" name="animals" id="animals" list="animals-list" />
+          <datalist id="animals-list">
+            <option value="Tiger"></option>
+            <option value="Lion"></option>
+            <option value="Crocodile"></option>
+            <option value="Cheeta"></option>
+          </datalist>
+        </p>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>What's your fav food?</legend>
+        <p>
+          <input type="radio" name="food" id="roll" value="roll" />
+
+          <label for="roll">Rolls</label>
+        </p>
+        <p>
+          <input type="radio" name="food" id="chicken" value="chicken" />
+          <label for="chicken">Chicken</label>
+        </p>
+        <p>
+          <input type="radio" name="food" id="fish" value="fish" />
+          <label for="fish">Fish</label>
+        </p>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Do you have pets?</legend>
+        <p>
+          <input type="checkbox" name="pets" value="dog" id="dog" />
+          <label for="dog">Dog</label>
+        </p>
+        <p>
+          <input type="checkbox" name="pets" value="cat" id="cat" />
+          <label for="cat">Cat</label>
+        </p>
+        <p>
+          <input type="checkbox" name="pets" value="goat" id="goat" />
+          <label for="goat">Goat</label>
+        </p>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Send me a Note:</legend>
+        <label for="mssg">Your Message:</label>
+        <br />
+        <textarea
+          name="mssg"
+          id="mssg"
+          cols="30"
+          rows="10"
+          placeholder="Type your message here"
+        ></textarea>
+      </fieldset>
+      <br />
+      <!-- input type button this only takes text inputs and no other things can be inserted in this hence using a button element will be better -->
+
+      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        formaction="https://httpbin.org/post"
+        formmethod="post"
+      >
+        Post
+      </button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
+</html>
